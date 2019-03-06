@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Exchange Rates View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="ExchangeRatesViewController" customModule="TestExchangeRates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1TI-kn-PM8">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Exchange rates" id="GlA-f3-bkm">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="ZaA-h3-kh7">
+                                            <connections>
+                                                <action selector="editButtonItem:" destination="BYZ-38-t0r" id="M0Z-kU-x84"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="otF-9D-Z13">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="exchangeRatesCell" rowHeight="100" id="hoH-Ij-tcp" customClass="ExchangeRatesCell" customModule="TestExchangeRates" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hoH-Ij-tcp" id="BT3-fV-Ttu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="H5k-HM-yA6">
+                                                    <rect key="frame" x="15" y="15" width="345" height="68"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZF3-lf-7qs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgV-7t-Usw">
+                                                            <rect key="frame" x="0.0" y="38" width="345" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="H5k-HM-yA6" secondAttribute="trailing" id="Zgh-VQ-QvL"/>
+                                                <constraint firstItem="H5k-HM-yA6" firstAttribute="leading" secondItem="BT3-fV-Ttu" secondAttribute="leadingMargin" id="fHc-Uy-R48"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="H5k-HM-yA6" secondAttribute="bottom" constant="6" id="kG5-f2-l2R"/>
+                                                <constraint firstItem="H5k-HM-yA6" firstAttribute="top" secondItem="BT3-fV-Ttu" secondAttribute="topMargin" constant="4" id="vdy-jy-KVR"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameAndScale" destination="wgV-7t-Usw" id="bkg-uK-11Y"/>
+                                            <outlet property="rateAndCharCode" destination="ZF3-lf-7qs" id="YTC-bR-Tfs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="E51-Pq-Esi"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="lw0-bA-YZa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="otF-9D-Z13" secondAttribute="bottom" id="63C-ED-Nlh"/>
+                            <constraint firstItem="1TI-kn-PM8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8U3-As-3gh"/>
+                            <constraint firstItem="otF-9D-Z13" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Cuv-uh-4An"/>
+                            <constraint firstItem="otF-9D-Z13" firstAttribute="top" secondItem="1TI-kn-PM8" secondAttribute="bottom" id="HIM-P2-ZMe"/>
+                            <constraint firstItem="otF-9D-Z13" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JFJ-IU-2BS"/>
+                            <constraint firstItem="otF-9D-Z13" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VBc-yi-z3Y"/>
+                            <constraint firstItem="otF-9D-Z13" firstAttribute="trailing" secondItem="1TI-kn-PM8" secondAttribute="trailing" id="Vbf-HI-iWf"/>
+                            <constraint firstItem="otF-9D-Z13" firstAttribute="leading" secondItem="1TI-kn-PM8" secondAttribute="leading" id="abE-6m-jXP"/>
+                            <constraint firstItem="otF-9D-Z13" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gTE-G9-6q2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="otF-9D-Z13" secondAttribute="trailing" id="kbC-an-YeX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="otF-9D-Z13" id="Jv7-TT-2Qc"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+        </scene>
+    </scenes>
+</document>
